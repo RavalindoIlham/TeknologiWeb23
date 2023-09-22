@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kalkulator Volume Bangun Ruang</title>
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Kalkulator Volume Bangun Ruang</h1>
+
+      <!-- Form input untuk Kubus -->
+      <h2>Kubus</h2>
+      <label for="kubus-sisi">Sisi Kubus:</label>
+      <input type="number" id="kubus-sisi" />
+      <button onclick="hitungVolumeKubus()">Hitung</button>
+      <p id="hasil-kubus"></p>
+
+      <!-- Form input untuk Balok -->
+      <h2>Balok</h2>
+      <label for="balok-panjang">Panjang Balok:</label>
+      <input type="number" id="balok-panjang" />
+      <label for="balok-lebar">Lebar Balok:</label>
+      <input type="number" id="balok-lebar" />
+      <label for="balok-tinggi">Tinggi Balok:</label>
+      <input type="number" id="balok-tinggi" />
+      <button onclick="hitungVolumeBalok()">Hitung</button>
+      <p id="hasil-balok"></p>
+
+      <!-- Form input untuk Tabung -->
+      <h2>Tabung</h2>
+      <label for="tabung-jari">Jari-Jari Tabung:</label>
+      <input type="number" id="tabung-jari" />
+      <label for="tabung-tinggi">Tinggi Tabung:</label>
+      <input type="number" id="tabung-tinggi" />
+      <button onclick="hitungVolumeTabung()">Hitung</button>
+      <p id="hasil-tabung"></p>
+    </div>
+
+    <script>
+      // Fungsi untuk menghitung volume kubus
+      function hitungVolumeKubus() {
+        const sisi = parseFloat(document.getElementById("kubus-sisi").value);
+        const hasil = sisi * sisi * sisi;
+        document.getElementById(
+          "hasil-kubus"
+        ).innerHTML = `Volume Kubus: ${hasil}`;
+      }
+
+      // Fungsi untuk menghitung volume balok
+      function hitungVolumeBalok() {
+        const panjang = parseFloat(
+          document.getElementById("balok-panjang").value
+        );
+        const lebar = parseFloat(document.getElementById("balok-lebar").value);
+        const tinggi = parseFloat(
+          document.getElementById("balok-tinggi").value
+        );
+        const hasil = panjang * lebar * tinggi;
+        document.getElementById(
+          "hasil-balok"
+        ).innerHTML = `Volume Balok: ${hasil}`;
+      }
+
+      // Fungsi untuk menghitung volume tabung
+      function hitungVolumeTabung() {
+        const jari = parseFloat(document.getElementById("tabung-jari").value);
+        const tinggi = parseFloat(
+          document.getElementById("tabung-tinggi").value
+        );
+        const hasil = Math.PI * jari * jari * tinggi;
+        document.getElementById(
+          "hasil-tabung"
+        ).innerHTML = `Volume Tabung: ${hasil.toFixed(2)}`;
+      }
+    </script>
+  </body>
+</html>
